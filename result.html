@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular.js</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+}
+
+.div1 {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid black;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.div2 {
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid black;
+    background-color: #eef;
+}
+
+.div3 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: #fff;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #ccc;
+}
+
+input {
+    border: none;
+    text-align: center;
+    width: 80%;
+}
+
+#subject, #subject1 {
+    width: 220px;
+}
+
+#code, #code1 {
+    width: 100px;
+}
+
+#lastrow {
+    font-weight: bold;
+    background-color: #ddd;
+}
+
+    </style>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <div class="div1">
+        <h3>Kavayitri Bahinabai Chaudhari North Maharashtra University Jalgaon</h3>
+        <h2>School of Computer Sciences</h2>
+        <h3>Master of Computer Applications</h3>
+        <h4>MCA SEM-I Examination DEC-2024</h4>
+    </div>
+    <div>
+        <div class="div2">
+            <p>Name : <input type="text" placeholder="name"></p>
+            <p>Mother Name : <input type="text" placeholder="mother Name"></p>
+            <p> PRN : <input type="number" placeholder="PRN Number"></p>
+            <p>Seat No : <input type="number" placeholder="Seat Number"></p>
+            <p> College : <input type="text" placeholder="College Name"></p>
+            <p>Exam Center : <input type="text" placeholder="center with code"></p>
+        </div>
+        <div>
+            <!-- <img src="rohitph.jpeg" alt="student img"> -->
+        </div>
+    </div>
+    <div class="div3">
+    <table ng-app="myApp" ng-controller="myCtrl" id="table">
+        <tr>
+            <th rowspan="2">Code</th>
+            <th rowspan="2" id="subject">Subject</th>
+            <th colspan="3">CA</th>
+            <th colspan="3">UA</th>
+            <th colspan="3">Total</th>
+            <th rowspan="2">Status</th>
+            <th rowspan="2">Remarks</th>
+        </tr>
+        <tr>
+            <td>MAX</td>
+            <td>MIN</td>
+            <td>OBT</td>
+            <td>MAX</td>
+            <td>MIN</td>
+            <td>OBT</td>
+            <td>MAX</td>
+            <td>MIN</td>
+            <td>OBT</td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="code" value="MCA-411" id="code1"></td>
+            <td id="subject"><input type="text" id="subject1" value="Database Management System"></td>
+            <td><input type="number" ng-model="cam1"></td>
+            <td><input type="number" value="16" step="1"></td>
+            <td><input type="number" placeholder="obt marks" ng-model="cas1"></td>
+            <td><input type="number" placeholder="max marks" ng-model="uam1"></td>
+            <td><input type="number" placeholder="min marks" value="24" step="1"></td>
+            <td><input type="number" placeholder="obt marks" ng-model="uas1"></td>
+            <td><input type="number" placeholder="max marks" value="100" step="1"></td>
+            <td><input type="number" placeholder="min marks" value="40" step="1"></td>
+            <td>{{cas1+uas1}}</td>
+            <td><input type="text" placeholder="status"></td>
+            <td><input type="text" placeholder="remark"></td>
+        </tr>
+        <tr>
+            <td id="code"><input type="text" placeholder="code" value="MCA-412" id="code1"></td>
+            <td id="subject"><input type="text" placeholder="subject" id="subject1" value="Operating Systems"></td>
+            <td><input type="number" placeholder="max marks" ng-model="cam2"></td>
+            <td><input type="number" placeholder="min marks" value="16" step="1"></td>
+            <td><input type="number" placeholder="obt marks" ng-model="cas2"></td>
+            <td><input type="number" placeholder="max marks" ng-model="uam2"></td>
+            <td><input type="number" placeholder="min marks" value="24" step="1"></td>
+            <td><input type="number" placeholder="obt marks" ng-model="uas2"></td>
+            <td><input type="number" placeholder="max marks" value="100" step="1"></td>
+            <td><input type="number" placeholder="min marks" value="40" step="1"></td>
+            <td>{{cas2+uas2}}</td>
+            <td><input type="text" placeholder="status"></td>
+            <td><input type="text" placeholder="remark"></td>
+        </tr>
+        <tr>
+            <td id="code"><input type="text" placeholder="code" value="MCA-413" id="code1"></td>
+            <td id="subject"><input type="text" placeholder="subject" id="subject1" value="Fundamentals of AI"></td>
+            <td><input type="number" placeholder="max marks" ng-model="cam3"></td>
+            <td><input type="number" placeholder="min marks" value="16" step="1"></td>
+            <td><input type="number" placeholder="obt marks" ng-model="cas3"></td>
+            <td><input type="number" placeholder="max marks" ng-model="uam3"></td>
+            <td><input type="number" placeholder="min marks" value="24" step="1"></td>
+            <td><input type="number" placeholder="obt marks" ng-model="uas3"></td>
+            <td><input type="number" placeholder="max marks" value="100" step="1"></td>
+            <td><input type="number" placeholder="min marks" value="40" step="1"></td>
+            <td>{{cas3+uas3}}</td>
+            <td><input type="text" placeholder="status"></td>
+            <td><input type="text" placeholder="remark"></td>
+        </tr>
+        <tr>
+            <td id="code"><input type="text" placeholder="code" value="MCA-414" id="code1"></td>
+            <td id="subject"><input type="text" placeholder="subject" id="subject1" value="OOPs in C++"></td>
+            <td><input type="number" placeholder="max marks" ng-model="cam4"></td>
+            <td><input type="number" placeholder="min marks" value="16" step="1"></td>
+            <td><input type="number" placeholder="obt marks" ng-model="cas4"></td>
+            <td><input type="number" placeholder="max marks" ng-model="uam4"></td>
+            <td><input type="number" placeholder="min marks" value="24" step="1"></td>
+            <td><input type="number" placeholder="obt marks" ng-model="uas4"></td>
+            <td><input type="number" placeholder="max marks" value="100" step="1"></td>
+            <td><input type="number" placeholder="min marks" value="40" step="1"></td>
+            <td>{{cas4+uas4}}</td>
+            <td><input type="text" placeholder="status"></td>
+            <td><input type="text" placeholder="remark"></td>
+        </tr>
+        <tr>
+            <td id="code"><input type="text" placeholder="code" value="MCA-420(B)" id="code1"></td>
+            <td id="subject"><input type="text" placeholder="subject" id="subject1" value="Web Programming"></td>
+            <td><input type="number" placeholder="max marks" ng-model="cam5"></td>
+            <td><input type="number" placeholder="min marks" value="8" step="1"></td>
+            <td><input type="number" placeholder="obt marks" ng-model="cas5"></td>
+            <td><input type="number" placeholder="max marks" ng-model="uam5"></td>
+            <td><input type="number" placeholder="min marks" value="12" step="1"></td>
+            <td><input type="number" placeholder="obt marks" ng-model="uas5"></td>
+            <td><input type="number" placeholder="max marks" value="50" step="1"></td>
+            <td><input type="number" placeholder="min marks" value="20" step="1"></td>
+            <td>{{cas5+uas5}}</td>
+            <td><input type="text" placeholder="status"></td>
+            <td><input type="text" placeholder="remark"></td>
+        </tr>
+        <tr>
+            <td id="code"><input type="text" placeholder="code" value="MCA-415" id="code1"></td>
+            <td id="subject"><input type="text" placeholder="subject" id="subject1" value="LAB on DBMS"></td>
+            <td><input type="number" placeholder="max marks" ng-model="cam6"></td>
+            <td><input type="number" placeholder="min marks" value="8" step="1"></td>
+            <td><input type="number" placeholder="obt marks" ng-model="cas6"></td>
+            <td><input type="number" placeholder="max marks" ng-model="uam6"></td>
+            <td><input type="number" placeholder="min marks" value="12" step="1"></td>
+            <td><input type="number" placeholder="obt marks" ng-model="uas6"></td>
+            <td><input type="number" placeholder="max marks" value="50" step="1"></td>
+            <td><input type="number" placeholder="min marks" value="20" step="1"></td>
+            <td>{{cas6+uas6}}</td>
+            <td><input type="text" placeholder="status"></td>
+            <td><input type="text" placeholder="remark"></td>
+        </tr>
+        <tr>
+            <td id="code"><input type="text" placeholder="code" value="MCA-416" id="code1"></td>
+            <td id="subject"><input type="text" placeholder="subject" id="subject1" value="LAB on LINUX(OS)"></td>
+            <td><input type="number" placeholder="max marks" ng-model="cam7"></td>
+            <td><input type="number" placeholder="min marks" value="8" step="1"></td>
+            <td><input type="number" placeholder="obt marks" ng-model="cas7"></td>
+            <td><input type="number" placeholder="max marks" ng-model="uam7"></td>
+            <td><input type="number" placeholder="min marks" value="12" step="1"></td>
+            <td><input type="number" placeholder="obt marks" ng-model="uas7"></td>
+            <td><input type="number" placeholder="max marks" value="50" step="1"></td>
+            <td><input type="number" placeholder="min marks" value="20" step="1"></td>
+            <td>{{cas7+uas7}}</td>
+            <td><input type="text" placeholder="status"></td>
+            <td><input type="text" placeholder="remark"></td>
+        </tr>
+        <tr>
+            <td id="code"><input type="text" placeholder="code" value="MCA-417" id="code1"></td>
+            <td id="subject"><input type="text" placeholder="subject" id="subject1" value="LAB on C++"></td>
+            <td><input type="number" placeholder="max marks" ng-model="cam8"></td>
+            <td><input type="number" placeholder="min marks" value="8" step="1"></td>
+            <td><input type="number" placeholder="obt marks" ng-model="cas8"></td>
+            <td><input type="number" placeholder="max marks" ng-model="uam8"></td>
+            <td><input type="number" placeholder="min marks" value="12" step="1"></td>
+            <td><input type="number" placeholder="obt marks" ng-model="uas8"></td>
+            <td><input type="number" placeholder="max marks" value="50" step="1"></td>
+            <td><input type="number" placeholder="min marks" value="20" step="1"></td>
+            <td>{{cas8+uas8}}</td>
+            <td><input type="text" placeholder="status"></td>
+            <td><input type="text" placeholder="remark"></td>
+        </tr>
+        <tr>
+            <td id="code"><input type="text" placeholder="code" value="MCA-419(B)" id="code1"></td>
+            <td id="subject"><input type="text" placeholder="subject" id="subject1" value="LAB on Web Programming"></td>
+            <td><input type="number" placeholder="max marks" ng-model="cam9"></td>
+            <td><input type="number" placeholder="min marks" value="8" step="1"></td>
+            <td><input type="number" placeholder="obt marks" ng-model="cas9"></td>
+            <td><input type="number" placeholder="max marks" ng-model="uam9"></td>
+            <td><input type="number" placeholder="min marks" value="12" step="1"></td>
+            <td><input type="number" placeholder="obt marks" ng-model="uas9"></td>
+            <td><input type="number" placeholder="max marks" value="50" step="1"></td>
+            <td><input type="number" placeholder="min marks" value="20" step="1"></td>
+            <td>{{cas9+uas9}}</td>
+            <td><input type="text" placeholder="status"></td>
+            <td><input type="text" placeholder="remark"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td id="subject"></td>
+            <td colspan="2">Total</td>
+            <td>{{cam1+cam2+cam3+cam4+cam5+cam6+cam7+cam8+cam9}} / {{cas1+cas2+cas3+cas4+cas5+cas6+cas7+cas8+cas9}} </td>
+            <td colspan="2">Total</td>
+            <td>{{uam1+uam2+uam3+uam4+uam5+uam6+uam7+uam8+uam9}} /{{uas1+uas2+uas3+uas4+uas5+uas6+uas7+uas8+uas9}}</td>
+            <td colspan="2">Total</td>
+            <td> {{((cas1+cas2+cas3+cas4+cas5+cas6+cas7+cas8+cas9)+(uas1+uas2+uas3+uas4+uas5+uas6+uas7+uas8+uas9))}}</td>
+            <td> <input type="text" placeholder="pass/fail"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="5" id="lastrow"> CGPA : {{((((cas1+cas2+cas3+cas4+cas5+cas6+cas7+cas8+cas9)+(uas1+uas2+uas3+uas4+uas5+uas6+uas7+uas8+uas9))/((cam1+cam2+cam3+cam4+cam5+cam6+cam7+cam8+cam9)/100+(uam1+uam2+uam3+uam4+uam5+uam6+uam7+uam8+uam9)/100))/9.5) | number:2}}</td>
+            <td colspan="5" id="lastrow"> Percentage : {{(((cas1+cas2+cas3+cas4+cas5+cas6+cas7+cas8+cas9)+(uas1+uas2+uas3+uas4+uas5+uas6+uas7+uas8+uas9))/((cam1+cam2+cam3+cam4+cam5+cam6+cam7+cam8+cam9)/100+(uam1+uam2+uam3+uam4+uam5+uam6+uam7+uam8+uam9)/100)) | number:2}}%</td>
+            <td colspan="3" id="lastrow">Grade :</td>
+        </tr>
+
+    </table>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+          $scope.cam1 = 40; // Default value
+          $scope.cam2 = 40; 
+          $scope.cam3 = 40; 
+          $scope.cam4 = 40; 
+          $scope.cam5 = 20; 
+          $scope.cam6 = 20; 
+          $scope.cam7 = 20; 
+          $scope.cam8 = 20; 
+          $scope.cam9 = 20; 
+          //ua max marks
+          $scope.uam1 = 60;
+          $scope.uam2 = 60;
+          $scope.uam3 = 60;
+          $scope.uam4 = 60;
+          $scope.uam5 = 30;
+          $scope.uam6 = 30;
+          $scope.uam7 = 30;
+          $scope.uam8 = 30;
+          $scope.uam9 = 30;
+        });
+      </script>
+
+</body>
+</html>
